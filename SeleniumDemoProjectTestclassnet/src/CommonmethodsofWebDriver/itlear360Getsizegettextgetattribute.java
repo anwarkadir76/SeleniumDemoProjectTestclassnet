@@ -5,28 +5,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class itlear360Getsizegettextgetattribute {
+public class itlear360clearsendkeyclick {
 
 	 public static void main(String[] args) {
-
+		 System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver.exe");
 		    WebDriver driver = new ChromeDriver();
 		    driver.get("https://www.itlearn360.com/");
 
-		  
-		    WebElement size = driver.findElement(By.id("kw"));
-		    System.out.println(size.getSize());
+		    WebElement search_text = driver.findElement(By.id("user_login"));
+		    WebElement search_button = driver.findElement(By.id("kadeer"));
 
-		   
-		    WebElement text = driver.findElement(By.id("cp"));
-		    System.out.println(text.getText());
-
-		    
-		    WebElement ty = driver.findElement(By.id("kw"));
-		    System.out.println(ty.getAttribute("type"));
-
-		
-		    WebElement display = driver.findElement(By.id("kw"));
-		    System.out.println(display.isDisplayed());
+		    search_text.sendKeys("Java");
+		    search_text.clear();
+		    search_text.sendKeys("Selenium Training with Java");
+		    search_button.click();
 
 		    driver.quit();
 		  }
